@@ -49,6 +49,7 @@ export default {
     messages: [],
     marker: true,
     iconIndex: 0,
+    timer: null,
     icons: [
       "mdi-emoticon",
       "mdi-emoticon-cool",
@@ -75,6 +76,7 @@ export default {
   },
   async mounted() {
     await this.init();
+    this.timer = setInterval(async () => await this.init(), 1000);
   },
 
   methods: {
@@ -125,6 +127,9 @@ export default {
         ? (this.iconIndex = 0)
         : this.iconIndex++;
     }
+  },
+  destroyed() {
+    clearInterval(this.timer);
   }
 };
 </script>
