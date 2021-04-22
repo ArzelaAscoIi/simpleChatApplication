@@ -37,7 +37,7 @@ cd backend
 ```
 
 ```bash
-npm run serves
+npm run serve
 ```
 This serves the vue frontend at 8080. 
 
