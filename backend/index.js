@@ -32,7 +32,7 @@ let messages = []
 
 let init = function () {
     if (messages.length === 0) {
-        messages = JSON.parse(fs.readFileSync("./backend/data/messages.json"))
+        messages = JSON.parse(fs.readFileSync("./data/messages.json"))
     }
 
 }
@@ -52,7 +52,7 @@ app.post('/', (req, res) => {
     try {
         req.body.timestamp = Date.now()
         messages.push(req.body)
-        fs.writeFile("./backend/data/messages.json", JSON.stringify(messages), (err) => {
+        fs.writeFile("./data/messages.json", JSON.stringify(messages), (err) => {
             if (err) throw err;
             res.status(200).send()
         });
