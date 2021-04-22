@@ -1,7 +1,7 @@
 
 
 <p align="center" >
-  <img src="assets/chat.PNG" width="70%">
+  <img src="assets/chat.PNG" width="30%">
 </p>
 
 
